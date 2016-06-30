@@ -61,10 +61,9 @@
     NSArray *arr = @[@"abstract",@"animals",@"business",@"cats",@"city",@"food",@"nightlife",@"fashion",@"people",@"nature",@"sports",@"technics",@"transport"];
     NSString *category = [arr objectAtIndex:(indexPath.row % [arr count])];
     NSInteger index = indexPath.row % 10 + 1;
-    NSString *imageUrl = [NSString stringWithFormat:@"http://lorempixel.com/400/200/%@/%d/image%d/",category,index,indexPath.row];
+    NSString *imageUrl = [NSString stringWithFormat:@"http://lorempixel.com/400/200/%@/%ld/image%ld/",category,index,indexPath.row];
     
     return imageUrl;
-
 }
 
 - (void)didReceiveMemoryWarning {
