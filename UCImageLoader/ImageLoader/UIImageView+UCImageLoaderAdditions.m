@@ -12,12 +12,17 @@
 
 - (void) setImageURLString:(NSString *)urlString
 {
-    __block id sself = self;
+    __block typeof(self) sself = self;
     NSString *key = [NSString stringWithFormat:@"%p",self];
     
     [[UCImageLoader sharedInstance] loadImageWithURLString:urlString withKey:key complete:^(UIImage *image, NSError *error, NSURL *url) {
-        [sself setImage:image];
-        [sself setNeedsLayout];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [sself setImage:image];
+            [sself setNeedsDisplay];
+            [sself sizeToFit];
+        });
+        
     } cancel:^{
 
     }];

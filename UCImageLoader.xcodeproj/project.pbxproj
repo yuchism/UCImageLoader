@@ -17,7 +17,6 @@
 		1143114019ED1DD30099D5ED /* UCCircularArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 1143113F19ED1DD30099D5ED /* UCCircularArray.m */; };
 		1143114319ED21EC0099D5ED /* UCImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1143114219ED21EC0099D5ED /* UCImageLoader.m */; };
 		1143114C19EE73630099D5ED /* UCImageMemoryLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 1143114B19EE73630099D5ED /* UCImageMemoryLoader.m */; };
-		118B8F5519FFABB8005E58D4 /* placeHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 118B8F5419FFABB8005E58D4 /* placeHolder.png */; };
 		11AEB81719F38E8D00B91391 /* UCImageHTTPLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AEB81619F38E8D00B91391 /* UCImageHTTPLoader.m */; };
 		11AEB81A19F60AEE00B91391 /* UCImageFileLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AEB81919F60AEE00B91391 /* UCImageFileLoader.m */; };
 		11AEB82019F6233A00B91391 /* UIImageView+UCImageLoaderAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 11AEB81F19F6233A00B91391 /* UIImageView+UCImageLoaderAdditions.m */; };
@@ -53,7 +52,6 @@
 		1143114219ED21EC0099D5ED /* UCImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCImageLoader.m; sourceTree = "<group>"; };
 		1143114A19EE73630099D5ED /* UCImageMemoryLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCImageMemoryLoader.h; sourceTree = "<group>"; };
 		1143114B19EE73630099D5ED /* UCImageMemoryLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCImageMemoryLoader.m; sourceTree = "<group>"; };
-		118B8F5419FFABB8005E58D4 /* placeHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeHolder.png; sourceTree = "<group>"; };
 		11AEB81519F38E8D00B91391 /* UCImageHTTPLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCImageHTTPLoader.h; sourceTree = "<group>"; };
 		11AEB81619F38E8D00B91391 /* UCImageHTTPLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UCImageHTTPLoader.m; sourceTree = "<group>"; };
 		11AEB81819F60AEE00B91391 /* UCImageFileLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UCImageFileLoader.h; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 		1143111519ED1D170099D5ED /* UCImageLoader */ = {
 			isa = PBXGroup;
 			children = (
-				118B8F5419FFABB8005E58D4 /* placeHolder.png */,
 				1143113D19ED1D890099D5ED /* ImageLoader */,
 				1143111A19ED1D170099D5ED /* AppDelegate.h */,
 				1143111B19ED1D170099D5ED /* AppDelegate.m */,
@@ -241,7 +238,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1143112219ED1D170099D5ED /* Main.storyboard in Resources */,
-				118B8F5519FFABB8005E58D4 /* placeHolder.png in Resources */,
 				1143112719ED1D170099D5ED /* LaunchScreen.xib in Resources */,
 				1143112419ED1D170099D5ED /* Images.xcassets in Resources */,
 			);

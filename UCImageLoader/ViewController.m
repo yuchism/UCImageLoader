@@ -10,8 +10,25 @@
 #import "UCImageLoader.h"
 #import "UIImageView+UCImageLoaderAdditions.h"
 
+
+@interface MyCell : UITableViewCell
+@property (retain, nonatomic) IBOutlet UIImageView *imgView;
+
+@end
+
+@implementation MyCell
+
+
+- (void)dealloc {
+    [_imgView release];
+    [super dealloc];
+}
+@end
+
+
 @interface ViewController ()
 
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation ViewController
@@ -19,11 +36,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    UITableView *tableView = [[[UITableView alloc] initWithFrame:[self.view bounds]] autorelease];
-    [self.view addSubview:tableView];
-    [tableView setDataSource:self];
-    [tableView setDelegate:self];
-    
+    [self.tableView setDataSource:self];
+    [self.tableView setDelegate:self];
+    [self.tableView registerClass:[MyCell class] forCellReuseIdentifier:@"mycell"];
 }
 
 
@@ -39,16 +54,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"test"];
-    if(!cell)
-    {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"test"] autorelease];
-        [cell.imageView setContentMode:UIViewContentModeScaleToFill];
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mycell"];
+
   
-    UIImage *placeHolder = [UIImage imageNamed:@"placeHolder.png"];
-    [[cell imageView] setImage:placeHolder];
+    [[cell imageView] setImage:[UIImage imageNamed:@"placeholder"]];
     [[cell imageView] setNeedsLayout];
+    [[cell imageView] setContentMode:UIViewContentModeScaleAspectFit];
     
     [cell.imageView setImageURLString:[self makeImageUrl:indexPath]];
     
@@ -61,7 +72,7 @@
     NSArray *arr = @[@"abstract",@"animals",@"business",@"cats",@"city",@"food",@"nightlife",@"fashion",@"people",@"nature",@"sports",@"technics",@"transport"];
     NSString *category = [arr objectAtIndex:(indexPath.row % [arr count])];
     NSInteger index = indexPath.row % 10 + 1;
-    NSString *imageUrl = [NSString stringWithFormat:@"http://lorempixel.com/400/200/%@/%ld/image%ld/",category,index,indexPath.row];
+    NSString *imageUrl = [NSString stringWithFormat:@"http://lorempixel.com/50/50/%@/%ld/image%ld/",category,index,indexPath.row];
     
     return imageUrl;
 }
@@ -71,4 +82,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    [_tableView release];
+    [super dealloc];
+}
 @end
